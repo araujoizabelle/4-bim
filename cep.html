@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="./css/cep.css" />
+		<script src="./js/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$( "#cep" ).blur(function(){
+					var recurso="http://api.postmon.com.br/v1/cep/";
+					var cep= $("#cep").val();
+					var $xhr= $.get(recurso+cep);
+					$xhr.done(function(objeto){
+						$("#logra").val(objeto.logradouro);
+						$("#num").val(objeto.numero);
+						$("#bairro").val(objeto.bairro);
+						$("#cidade").val(objeto.cidade);
+						$("#estado").val(objeto.estado);
+					});
+					
+				});
+			});	
+					
+		</script>
+	</head>
+<body>
+	<div class="principal">
+	<form method="GET" action="#">
+	<label id="nome"/>nome:</label>
+	<input type="text" name="Nome"> <br/>
+	<label id="cep"/>cep:</label>
+	<input type="text" name="cep" id="cep"> <br/>
+	<label id="logra"/>logradouro:</label>
+	<input type="text" name="logra" id="logra"> <br/>
+	<label id="num"/>numero:</label>
+	<input type="text" name="num" id="num"> <br/>
+	<label id="bairro"/>bairro:</label>
+	<input type="text" name="bairro" id="bairro"> <br/>
+	<label id="cidade"/>cidade:</label>
+	<input type="text" name="cidade" id="cidade"> <br/>
+	<label id="estado"> estado: </label>
+	<input type="text" name="estado" id="estado"> <br/>
+	</form>
+	</div>
+</body>
+</html>

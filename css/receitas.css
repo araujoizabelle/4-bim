@@ -1,0 +1,23 @@
+body{
+	background-image:url(../img/background.jpg);
+}
+.receitas{
+	width:600px;
+	margin:0 auto;
+	text-align:center;
+	background-color: rgba(255,255,255, 0.7);
+	border-radius:50px;
+}
+img{
+	width:500px;
+	border-radius:50px;
+}
+img:hover{
+	width:600px;
+	transition: 1s;
+	cursor:pointer;
+}
+h1{
+	text-decoration:underline;
+
+}
